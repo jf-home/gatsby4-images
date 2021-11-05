@@ -1,0 +1,240 @@
+backend:
+  name: git-gateway
+  branch: master
+
+local_backend: true
+
+publish_mode: editorial_workflow
+
+media_folder: "/static/assets"
+
+collections:
+  - label: "Pages"
+    name: "pages"
+    files:
+      - label: "About"
+        name: "about"
+        file: "src/content/about.md"
+        fields:
+          - { label: "Template", name: "template", widget: "select", options: ["other"] }
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string", required: false }
+          - { label: "Date", name: "date", widget: "datetime" }
+          - { label: "Image", name: "image", widget: "image", required: false }
+          - { label: "Image alt text", name: alttext, widget: string }
+          - label: Section
+            name: section
+            widget: list
+            fields:
+              - { label: "Section title", name: title, widget: string }
+              - { label: "Section subtitle", name: subtitle, widget: string, required: false }
+              - { label: "Section image", name: image, widget: image }
+              - { label: "Section image alt text", name: alttext, widget: string }
+              - { label: "Section image placement", name: "placement", widget: "select", options: ["card", "left", "right"] }
+              - label: Bullets
+                name: bullets
+                widget: list
+                fields:
+                  - { label: "Bullet text", name: text, widget: "string" }      
+          - { label: "Timeline title", name: timelinetitle, widget: string }
+          - label: Timeline
+            name: timeline
+            widget: list
+            fields:
+              - { label: "Timeline date", name: "date", widget: "datetime" }
+              - { label: "Timeline description", name: description, widget: string }
+              - { label: "Timeline website", name: website, widget: string, required: false }
+              - { label: "Timeline press release", name: pressrelease, widget: string, required: false }
+              - { label: "Timeline icon", name: faicon, widget: "select", options: ["award", "brain", "building", "city", "cloud-upload-alt", "file-certificate", "grin-stars", "handshake", "hotel", "plane-departure", "trophy", "wine-glass-alt" ] }
+              - { label: "Timeline circle colour", name: circlecolour, widget: "select", options: ["timeline-gradient-start", "timeline-gradient", "timeline-gradient-det", "timeline-gradient-eden", "timeline-gradient-eng", "timeline-gradient-ft", "timeline-gradient-gov", "timeline-gradient-iet", "timeline-gradient-il", "timeline-gradient-m4", "timeline-gradient-sl", "timeline-gradient-usr" ] }
+      - label: "Careers"
+        name: "careers"
+        file: "src/content/careers.md"
+        fields:
+          - { label: "Template", name: "template", widget: "select", options: ["other"] }
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string", required: false }
+          - { label: "Date", name: "date", widget: "datetime" }
+          - { label: "Image", name: "image", widget: "image", required: false }
+          - { label: "Image alt text", name: alttext, widget: string }
+          - label: Section
+            name: section
+            widget: list
+            fields:
+              - { label: "Section title", name: title, widget: string }
+              - { label: "Section subtitle", name: subtitle, widget: string, required: false }
+              - { label: "Section description", name: description, widget: markdown }
+              - { label: "Section image", name: image, widget: image }
+              - { label: "Section image alt text", name: alttext, widget: string }
+              - { label: "Section image placement", name: "placement", widget: "select", options: ["card", "left", "right"] }
+              - { label: "Button link", name: btnlink, widget: string, required: false }
+              - { label: "Button colour", name: "btncolour", widget: "select", options: ["ficon-cics", "ficon-det", "ficon-eden", "ficon-iet", "ficon-il", "ficon-m4", "ficon-rob", "ficon-sl", "ficon-tb", "ficon-ue", "ficon-ug", "ficon-usi"], required: false }
+          - label: TIP
+            name: tip
+            widget: list
+            fields:
+              - { label: "TIP title", name: title, widget: string }
+              - { label: "TIP subtitle", name: subtitle, widget: string, required: false }
+              - { label: "TIP description", name: description, widget: markdown }
+              - label: Card
+                name: card
+                widget: list
+                fields:
+                  - { label: "Image", name: image, widget: image }
+                  - { label: "Image alt text", name: alttext, widget: string }
+                  - { label: "Image link text", name: linktext, widget: string, required: false }
+                  - { label: "Image link", name: link, widget: string, required: false }
+              - { label: "CTA description", name: ctadescription, widget: text }
+              - { label: "CTA text", name: ctatext, widget: string }
+              - { label: "CTA link", name: ctalink, widget: string }
+          - label: CI
+            name: ci
+            widget: list
+            fields:
+              - { label: "CI title", name: title, widget: string }
+              - { label: "CI subtitle", name: subtitle, widget: string, required: false }
+              - { label: "CI description", name: description, widget: markdown }
+              - label: Card
+                name: card
+                widget: list
+                fields:
+                  - { label: "Image title", name: title, widget: string }
+                  - { label: "Image", name: image, widget: image }
+                  - { label: "Image alt text", name: alttext, widget: string }
+                  - { label: "Image link text", name: linktext, widget: string, required: false }
+                  - { label: "Image link", name: link, widget: string, required: false }
+              - { label: "CTA description", name: ctadescription, widget: text }
+              - { label: "CTA text", name: ctatext, widget: string }
+              - { label: "CTA link", name: ctalink, widget: string }
+      - label: "index"
+        name: "index"
+        file: "src/content/strategize-transform-perform.md"
+        fields:
+          - { label: "Template", name: "template", widget: "select", options: ["other"] }
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string", required: false }
+          - { label: "Date", name: "date", widget: "datetime" }
+          - { label: "Image", name: "image", widget: "image", required: false }
+          - { label: "Image alt text", name: alttext, widget: string }
+          - { label: "Fore image", name: "foreimage", widget: "image", required: false }
+          - { label: "Fore image alt text", name: forealttext, widget: string }          
+          - label: Features
+            name: features
+            widget: list
+            fields:
+              - { label: "Features title", name: title, widget: string }
+              - { label: "Features subtitle", name: subtitle, widget: string, required: false }
+              - { label: "Features image", name: image, widget: image }
+              - { label: "Features image alt text", name: alttext, widget: string }
+              - label: Text
+                name: text
+                widget: list
+                fields:
+                  - { label: "Feature text", name: text, widget: "string" }            
+          - label: Section
+            name: section
+            widget: list
+            fields:
+              - { label: "Section title", name: title, widget: string }
+              - { label: "Section subtitle", name: subtitle, widget: string, required: false }
+              - { label: "Section description", name: description, widget: string }
+              - { label: "Section image", name: image, widget: image }
+              - { label: "Section image alt text", name: alttext, widget: string }
+              - { label: "Section image placement", name: "placement", widget: "select", options: ["card", "left", "right"] }
+              - { label: "Button link", name: btnlink, widget: string, required: false }
+              - { label: "Button colour", name: "btncolour", widget: "select", options: ["ficon-cics", "ficon-det", "ficon-eden", "ficon-iet", "ficon-il", "ficon-m4", "ficon-rob", "ficon-sl", "ficon-tb", "ficon-ue", "ficon-ug", "ficon-usi"], required: false }
+      - label: "Cookie Policy"
+        name: "cookie-policy"
+        file: "src/content/cookie-policy.md"
+        fields:
+          - { label: "Template", name: "template", widget: "select", options: ["legal"] }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string", required: false }
+          - { label: "Date", name: "date", widget: "datetime" }
+          - { label: "Image", name: "image", widget: "image", required: false }
+          - { label: "Image alt text", name: "alttext", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Do Not Sell My Personal Information"
+        name: "do-not-sell-my-personal-information"
+        file: "src/content/do-not-sell-my-personal-information.md"
+        fields:
+          - { label: "Template", name: "template", widget: "select", options: ["legal"] }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string", required: false }
+          - { label: "Date", name: "date", widget: "datetime" }
+          - { label: "Image", name: "image", widget: "image", required: false }
+          - { label: "Image alt text", name: "alttext", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Legal Notice"
+        name: "legal-notice"
+        file: "src/content/legal-notice.md"
+        fields:
+          - { label: "Template", name: "template", widget: "select", options: ["legal"] }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string", required: false }
+          - { label: "Date", name: "date", widget: "datetime" }
+          - { label: "Image", name: "image", widget: "image", required: false }
+          - { label: "Image alt text", name: "alttext", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Privacy Statement"
+        name: "privacy-statement"
+        file: "src/content/privacy-statement.md"
+        fields:
+          - { label: "Template", name: "template", widget: "select", options: ["legal"] }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string", required: false }
+          - { label: "Date", name: "date", widget: "datetime" }
+          - { label: "Image", name: "image", widget: "image", required: false }
+          - { label: "Image alt text", name: "alttext", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "UniGW"
+        name: "unigw"
+        file: "src/content/unigw.md"
+        fields:
+          - { label: "Template", name: "template", widget: "select", options: ["other"] }
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string", required: false }
+          - { label: "Date", name: "date", widget: "datetime" }
+          - { label: "Image", name: "image", widget: "image", required: false }
+          - { label: "Image alt text", name: alttext, widget: string }
+          - { label: "Body title", name: bodytitle, widget: string, required: false }
+          - { label: "Body image", name: "bodyimage", widget: "image", required: false }
+          - { label: "Body image alt text", name: bodyalttext, widget: string }
+          - { label: "Body", name: "body", widget: "markdown" } 
+          - label: Section
+            name: section
+            widget: list
+            fields:
+              - { label: "Section title", name: title, widget: string }
+              - { label: "Section subtitle", name: subtitle, widget: string, required: false }
+              - { label: "Section description", name: description, widget: markdown }
+              - { label: "Section image", name: image, widget: image }
+              - { label: "Section image alt text", name: alttext, widget: string }
+              - { label: "Section image placement", name: "placement", widget: "select", options: ["card", "left", "right"] }
+              - { label: "Button link", name: btnlink, widget: string, required: false }
+              - { label: "Button colour", name: "btncolour", widget: "select", options: ["ficon-cics", "ficon-det", "ficon-eden", "ficon-iet", "ficon-il", "ficon-m4", "ficon-rob", "ficon-sl", "ficon-tb", "ficon-ue", "ficon-ug", "ficon-usi"], required: false }
+          - { label: "CTA title", name: ctatitle, widget: markdown }
+          - { label: "CTA image", name: ctaimage, widget: image }
+          - { label: "CTA image alt text", name: ctaalttext, widget: string }
+          - { label: "CTA description", name: ctadescription, widget: text }
+          - { label: "Button text", name: ctalinktext, widget: string }
+          - { label: "Button link", name: ctalink, widget: string }
+  - name: "about"
+    label: "About"
+    folder: "src/content/about"
+    create: true
+    slug: "{{slug}}"
+    editor:
+     preview: false
+    fields:
+      - { label: "Template", name: "template", widget: "select", options: ["about"] }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Subtitle", name: "subtitle", widget: "string", required: false }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Image alt text", name: "alttext", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" } 

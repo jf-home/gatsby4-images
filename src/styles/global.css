@@ -1,0 +1,9 @@
+body,
+html {
+  color: #000000;
+  font-family: 'DM Sans', sans-serif !important;
+  letter-spacing: 0.025rem;
+}
+div[role='group'][tabindex] {
+  height: 100%;
+}
