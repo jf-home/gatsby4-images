@@ -13,7 +13,6 @@ module.exports = {
     title: 'Sample site',
     description: 'Unable to get images working with Gatsby v4',
     author: 'jf-home',
-    siteUrl: 'n/a',
   },
 
   plugins: [
