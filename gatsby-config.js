@@ -26,13 +26,13 @@ module.exports = {
         icon: `${__dirname}/src/images/avatar.png`, // This path is relative to the root of the site.
       },
     },
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `assets`,
-    //     path: `${__dirname}/static/assets`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `assets`,
+        path: `${__dirname}/static/assets`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -62,12 +62,12 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          // {
-          //   resolve: `gatsby-remark-relative-images`,
-          //     options: {
-          //       staticFolderName: 'static',
-          //     }, 
-          // },
+          {
+            resolve: `gatsby-remark-relative-images`,
+              options: {
+                staticFolderName: 'static',
+              }, 
+          },
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -102,7 +102,7 @@ module.exports = {
         },
       },
     },
-    // `gatsby-transformer-remark-frontmatter`, 
+    `gatsby-transformer-remark-frontmatter`, 
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-offline`,

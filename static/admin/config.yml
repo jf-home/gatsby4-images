@@ -6,7 +6,7 @@ local_backend: true
 
 publish_mode: editorial_workflow
 
-media_folder: "/src/images"
+media_folder: "/static/assets"
 
 collections:
   - label: "Pages"

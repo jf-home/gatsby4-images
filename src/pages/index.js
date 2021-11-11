@@ -16,6 +16,13 @@ const Index = ({ data }) => {
           className="img-fluid"
           alt={post.frontmatter.alttext}
         />
+
+        <GatsbyImage
+          image={post.frontmatter.foreimage.childImageSharp.gatsbyImageData}
+          className="img-fluid"
+          alt={post.frontmatter.forealttext}
+        />
+
       </div>
 
     </Layout>
